@@ -117,6 +117,8 @@ This project answers key business questions:
    - Model: `high_income_customer_analysis`
    - Key Insight: FUNDING products have 96% adoption among medium-high income customers
 
+For more details, visit [this](https://github.com/Jomen034/my-duckdb-analytics/blob/main/BUSINESS_INSIGHTS.md)
+
 ## 🔧 Usage
 
 ### All together (duckdb + dbt and the 360 dashboard)
