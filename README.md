@@ -56,7 +56,6 @@ my-duckdb-analytics/
 ### One-Command Setup
 ```bash
 git clone https://github.com/Jomen034/my-duckdb-analytics
-cd my_duckdbt
 chmod +x dbt_setup.sh
 ./dbt_setup.sh
 ```
@@ -65,7 +64,6 @@ chmod +x dbt_setup.sh
 ```bash
 # 1. Clone repository
 git clone https://github.com/Jomen034/my-duckdb-analytics
-cd my_duckdbt
 
 # 2. Create virtual environment
 python3 -m venv dbt_env
@@ -74,12 +72,15 @@ source dbt_env/bin/activate
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Run the pipeline
+# 4. Change directory to dbt project
+cd my_duckdbt
+
+# 5. Run the pipeline
 dbt seed
 dbt run
 dbt test
 
-OR
+# OR
 dbt build # executes all three mentioned above
 ```
 
