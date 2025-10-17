@@ -155,8 +155,10 @@ duckdb analytics.duckdb
 
 ## 📊 Data Quality
 
-The project includes built-in data quality tests:
+The project includes a built-in data quality test:
 - Not null constraints on key fields
+
+For improving data quality, there are possibilities to enhance tests, such as:
 - Referential integrity checks
 - Data freshness monitoring
 - Custom business logic tests
