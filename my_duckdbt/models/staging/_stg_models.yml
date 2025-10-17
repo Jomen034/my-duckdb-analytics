@@ -1,0 +1,39 @@
+version: 2
+models:
+  - name: stg_porto
+    description: "Staging model for the porto source table"
+    columns:
+      - name: customer_id
+        description: "Customer identifier"
+        tests:
+              - not_null
+      - name: product
+        description: "Product name"
+      - name: product_category
+        description: "Category of the product"
+      - name: amount
+        description: "Amount/value of the product"
+  - name: stg_profile
+    description: "Staging model for the profile source table"
+    columns:
+      - name: customer_id
+        description: "Customer identifier"
+        tests:
+              - not_null
+  - name: stg_transaction
+    description: "Staging model for the transaction source table"
+    columns:
+      - name: transaction_date
+        description: "Date of the transaction"
+        tests:
+              - not_null
+      - name: customer_id
+        description: "Customer identifier"
+        tests:
+              - not_null
+      - name: transaction_method
+        description: "Method used for transaction"
+      - name: transaction_type
+        description: "Type of transaction"
+      - name: transaction_amount
+        description: "Amount of the transaction"

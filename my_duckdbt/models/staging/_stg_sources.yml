@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: analytics
+    schema: main
+    description: "Raw CSV data files"
+    tables:
+      - name: porto
+        description: "Customer portfolio data with products and amounts"
+            
+      - name: profile
+        description: "Customer demographic and income profile data"
+            
+      - name: transaction
+        description: "Customer transaction history"

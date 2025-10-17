@@ -1,0 +1,208 @@
+version: 2
+models:
+  - name: high_income_customer_analysis
+    description: "This model provides insights into high-income customer behavior by analyzing product category usage, adoption rates, and value rankings within different income segments."
+    columns:
+      - name: income_segment
+        description: Represents the categorization of customers based on their income levels, such as 'Very High Income (>25 Juta)', 'High Income (>5 Juta)', 'Medium-High Income (>3 Juta)', or 'Lower Income'. This helps in understanding customer groups and their purchasing power.
+        data_type: varchar
+      - name: income_bracket
+        description: Indicates the specific income range or bracket a customer falls into, providing a more granular view of their financial capacity within the broader income segment.
+        data_type: varchar
+      - name: product_category
+        description: Defines the type or category of products purchased by customers, such as electronics, clothing, or groceries. This helps in analyzing customer preferences and trends within different income segments.
+        data_type: varchar
+      - name: unique_customers
+        description: Represents the number of distinct customers who have purchased products within a specific product category and income segment. This metric helps identify the popularity of a product category among high-income customers.
+        data_type: bigint
+      - name: total_value
+        description: Indicates the total monetary value of all purchases made within a specific product category and income segment. This metric provides insights into the overall revenue contribution of a product category.
+        data_type: decimal(38,3)
+      - name: avg_value
+        description: Shows the average monetary value of purchases within a specific product category and income segment. This metric helps understand the typical spending behavior of high-income customers for a given product category.
+        data_type: double
+      - name: usage_count
+        description: The total number of times products within a specific category have been utilized by high-income customers. This metric helps in understanding the popularity and frequency of usage for each product category among the target customer segment.
+        data_type: bigint
+      - name: adoption_rate_percent
+        description: The percentage of high-income customers within a specific income segment who have adopted products from a particular category. This metric provides insights into the penetration and acceptance of product categories among the target audience.
+        data_type: double
+      - name: customer_rank
+        description: The rank of a product category based on the number of unique high-income customers who have used products from that category. A lower rank indicates higher popularity and customer engagement within the income segment.
+        data_type: bigint
+      - name: value_rank
+        description: This column represents the ranking of product categories within each income segment based on their total monetary value. A lower rank indicates a higher total value contribution by the product category within the segment.
+        data_type: bigint
+      - name: adoption_rank
+        description: This column indicates the ranking of product categories within each income segment based on their adoption rate percentage. A lower rank signifies higher adoption by customers in the segment.
+        data_type: bigint
+      - name: segment_value_percentage
+        description: This column shows the percentage contribution of a product category's total value to the overall total value within its income segment. It helps understand the relative importance of the product category in the segment's portfolio.
+        data_type: double
+  - name: revenue_analysis_by_product
+    description: "This model provides a detailed analysis of revenue metrics by product category, including customer counts, portfolio values, transaction revenues, and rankings."
+    columns:
+      - name: product_name
+        data_type: varchar
+      - name: product_category
+        data_type: varchar
+      - name: customer_count
+        data_type: bigint
+      - name: total_portfolio_value
+        data_type: decimal(38,3)
+      - name: total_transaction_revenue
+        data_type: decimal(38,3)
+      - name: total_revenue
+        data_type: decimal(38,3)
+      - name: revenue_percentage
+        data_type: double
+      - name: portfolio_percentage
+        data_type: double
+      - name: transaction_percentage
+        data_type: double
+      - name: avg_portfolio_value
+        data_type: double
+      - name: avg_transaction_revenue
+        data_type: double
+      - name: total_product_count
+        data_type: hugeint
+      - name: total_transaction_count
+        data_type: hugeint
+      - name: revenue_rank
+        data_type: bigint
+      - name: portfolio_rank
+        data_type: bigint
+      - name: transaction_rank
+        data_type: bigint
+  - name: customer_transaction_analysis
+    description: "This model provides a comprehensive summary of customer transaction patterns, including spending habits, transaction frequency, and demographic details."
+    columns:
+      - name: customer_id
+        description: A unique identifier assigned to each customer, used to track and analyze their transaction and profile data.
+        data_type: integer
+      - name: total_transactions
+        description: The total number of transactions made by the customer across all payment methods and transaction types.
+        data_type: bigint
+      - name: total_spent
+        description: The cumulative amount of money spent by the customer across all their transactions.
+        data_type: decimal(38,3)
+      - name: avg_transaction_amount
+        description: The average amount spent by the customer per transaction. This metric provides insight into the typical transaction size for a customer, helping to understand their spending behavior.
+        data_type: double
+      - name: max_transaction_amount
+        description: The highest amount spent by the customer in a single transaction. This value highlights the customer's peak spending capacity during a transaction.
+        data_type: decimal(18,3)
+      - name: min_transaction_amount
+        description: The lowest amount spent by the customer in a single transaction. This metric helps identify the smallest transaction size, offering a view of the customer's minimal spending behavior.
+        data_type: decimal(18,3)
+      - name: payment_methods_used
+        description: This column represents the total number of distinct payment methods a customer has used across all their transactions. It provides insight into the variety of payment options utilized by the customer.
+        data_type: bigint
+      - name: transaction_types_used
+        description: This column indicates the total number of distinct transaction types a customer has engaged in. It helps understand the diversity of transaction categories the customer interacts with.
+        data_type: bigint
+      - name: first_transaction_date
+        description: This column captures the date of the customer's earliest recorded transaction. It is useful for identifying when a customer first started engaging with the business.
+        data_type: timestamp
+      - name: last_transaction_date
+        description: The date of the most recent transaction made by the customer. This helps in understanding the recency of customer activity and can be used to identify active or dormant customers.
+        data_type: timestamp
+      - name: transactions_per_day
+        description: The average number of transactions made by the customer per day, calculated over the period between their first and last transaction. This metric provides insight into the customer's transaction frequency and engagement level.
+        data_type: double
+      - name: gender
+        description: The gender of the customer as recorded in their profile. This information can be used for demographic analysis and targeted marketing strategies.
+        data_type: varchar
+      - name: income_bracket
+        description: This column categorizes customers into predefined income ranges, providing insights into their financial standing and purchasing power. It helps in segmenting customers for targeted marketing and analysis.
+        data_type: varchar
+      - name: income_level
+        description: This column represents a numerical value indicating the customer's income tier, which can be used for detailed financial analysis and customer segmentation.
+        data_type: integer
+  - name: customer_portfolio_summary
+    description: "This model provides a summary of customer portfolio data, including product details, financial metrics, and portfolio composition."
+    columns:
+      - name: customer_id
+        description: A unique identifier for each customer, used to track their portfolio and associated product categories.
+        data_type: integer
+      - name: product_category
+        description: The category or type of product that a customer has in their portfolio, such as electronics, clothing, or groceries.
+        data_type: varchar
+      - name: product_count
+        description: The total number of products within a specific category that a customer owns in their portfolio.
+        data_type: bigint
+      - name: total_amount
+        description: The total monetary value of all products purchased by a customer within a specific product category. This helps in understanding the overall spending of a customer in that category.
+        data_type: decimal(38,3)
+      - name: avg_amount
+        description: The average monetary value of products purchased by a customer within a specific product category. This provides insight into the typical spending per product for the customer in that category.
+        data_type: double
+      - name: max_amount
+        description: The highest monetary value of a single product purchased by a customer within a specific product category. This helps identify the most expensive product bought by the customer in that category.
+        data_type: decimal(18,3)
+      - name: min_amount
+        description: The smallest transaction amount recorded for a specific product category within a customer's portfolio. This helps identify the minimum value of products purchased in a category.
+        data_type: decimal(18,3)
+      - name: total_portfolio_value
+        description: The total monetary value of all transactions across all product categories for a customer. This represents the overall financial worth of the customer's portfolio.
+        data_type: decimal(38,3)
+      - name: category_count
+        description: The number of distinct product categories in a customer's portfolio. This provides insight into the diversity of products a customer has engaged with.
+        data_type: bigint
+      - name: total_products
+        description: The total number of products associated with a customer across all categories in their portfolio. This provides an overview of the customer's product engagement.
+        data_type: hugeint
+      - name: portfolio_percentage
+        description: The percentage contribution of a specific product category's total amount to the customer's overall portfolio value. This helps in understanding the significance of each category within the customer's portfolio.
+        data_type: double
+  - name: daily_transaction_trends
+    description: "Provides daily and monthly transaction summaries, including counts, amounts, averages, and customer activity metrics for business analysis."
+    columns:
+      - name: transaction_date
+        description: The specific date on which transactions occurred. This is useful for analyzing daily trends and understanding transaction patterns over time.
+        data_type: timestamp
+      - name: transaction_year
+        description: The year in which the transaction took place. This helps in identifying yearly trends and comparing performance across different years.
+        data_type: bigint
+      - name: transaction_month
+        description: The month in which the transaction occurred. This is valuable for tracking monthly trends and seasonal variations in transaction activity.
+        data_type: bigint
+      - name: transaction_day_of_week
+        description: Indicates the day of the week when the transactions occurred, represented as a numeric value (e.g., 1 for Monday, 2 for Tuesday, etc.). This helps in analyzing trends based on specific days of the week.
+        data_type: bigint
+      - name: transaction_count
+        description: Represents the total number of transactions that occurred on a specific day. This metric is useful for understanding daily transaction volume and identifying peak activity periods.
+        data_type: bigint
+      - name: total_amount
+        description: Shows the total monetary value of all transactions for a specific day. This helps in assessing the overall revenue generated on a particular day.
+        data_type: decimal(38,3)
+      - name: avg_amount
+        description: The average transaction amount for a given day, calculated by dividing the total transaction amount by the number of transactions. This helps business users understand the typical transaction size on a daily basis.
+        data_type: double
+      - name: unique_customers
+        description: The count of distinct customers who made transactions on a given day. This metric provides insight into customer engagement and activity levels for the day.
+        data_type: bigint
+      - name: payment_methods_used
+        description: The number of distinct payment methods utilized by customers on a given day. This helps business users analyze the diversity of payment options being used and identify trends in payment preferences.
+        data_type: bigint
+      - name: transaction_types_used
+        description: The number of distinct transaction types utilized on a specific day. This helps in understanding the variety of transaction activities occurring daily.
+        data_type: bigint
+      - name: monthly_transaction_count
+        description: The total number of transactions recorded in a specific month. This provides insight into the overall transaction volume for the month.
+        data_type: bigint
+      - name: monthly_total_amount
+        description: The cumulative monetary value of all transactions in a specific month. This metric is useful for assessing the total revenue generated during the month.
+        data_type: decimal(38,3)
+      - name: monthly_avg_amount
+        description: This column represents the average transaction amount for a given month. It provides insights into the typical transaction value during that period, helping to identify spending trends and patterns.
+        data_type: double
+      - name: active_days
+        description: This column indicates the number of unique days within a month when transactions occurred. It helps business users understand customer activity and engagement levels over time.
+        data_type: bigint
+      - name: avg_transaction_value
+        description: This column calculates the average value of individual transactions for a specific day. It is useful for assessing the spending behavior of customers and identifying high-value transaction days.
+        data_type: double
+      - name: transactions_per_customer
+        description: This column represents the average number of transactions made by each unique customer on a given day. It is calculated by dividing the total number of transactions by the count of unique customers for that day. Business users can use this metric to understand customer engagement and transaction frequency.
+        data_type: double
