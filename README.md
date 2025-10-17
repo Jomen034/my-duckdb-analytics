@@ -55,7 +55,7 @@ my-duckdb-analytics/
 
 ### One-Command Setup
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Jomen034/my-duckdb-analytics
 cd my_duckdbt
 chmod +x dbt_setup.sh
 ./dbt_setup.sh
@@ -64,7 +64,7 @@ chmod +x dbt_setup.sh
 ### Manual Setup
 ```bash
 # 1. Clone repository
-git clone <https://github.com/Jomen034/my-duckdb-analytics>
+git clone https://github.com/Jomen034/my-duckdb-analytics
 cd my_duckdbt
 
 # 2. Create virtual environment
