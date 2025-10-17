@@ -78,7 +78,13 @@ pip install -r requirements.txt
 dbt seed
 dbt run
 dbt test
+
+OR
+dbt build # executes all three mentioned above
 ```
+
+<img width="740" height="542" alt="image" src="https://github.com/user-attachments/assets/a82ac222-8066-43d0-af5c-7250ae1a659e" />
+
 
 ## 📊 Customer 360 Dashboard with Python Streamlit
 
