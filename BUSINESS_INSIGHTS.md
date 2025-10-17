@@ -11,6 +11,12 @@
 4. **PIF-FLOATING** (LOAN) - 5.70% of total revenue
 5. **KPR_KENDALI** (LOAN) - 4.47% of total revenue
 
+<img width="1002" height="498" alt="image" src="https://github.com/user-attachments/assets/fb271365-5039-49f4-a956-de8525b52794" />
+
+<img width="1007" height="391" alt="image" src="https://github.com/user-attachments/assets/27e543b4-b8f8-4e5b-ab5e-3c413251e811" />
+
+
+
 ### Insights:
 - **FUNDING products** (led by MULTI CURRENCY) are the biggest revenue drivers
 - **LOAN products** dominate the top 5, showing strong demand for credit products
@@ -36,6 +42,11 @@
 - **FUNDING**: 35.71% adoption rate (most popular)
 - **LOAN**: 35.71% adoption rate (tied for most popular)
 - **ORI**: 28.57% adoption rate (unique to very high income)
+
+<img width="1032" height="583" alt="image" src="https://github.com/user-attachments/assets/d34fc237-b7a9-41bf-9b14-a66c2e2772cd" />
+
+<img width="888" height="571" alt="image" src="https://github.com/user-attachments/assets/2bcb8653-a83e-4f58-84dc-fb0096f890ae" />
+
 
 ### Insights:
 - **FUNDING and LOAN products** are universally popular across all high-income segments
